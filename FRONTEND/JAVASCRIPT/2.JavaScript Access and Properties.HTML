@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .counter-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Program using 'this' keyword -->
+    <section>
+        <h2>Hide Element Using 'this' Keyword</h2>
+        <div id="hideMe">Click the button to make this disappear.</div>
+        <button onclick="hideElement()">Hide Element</button>
+        <script>
+            function hideElement() {
+                // Using 'this' keyword to refer to the button that was clicked
+                const element = document.getElementById('hideMe');
+                element.style.display = 'none'; // Hide the element
+            }
+        </script>
+    </section>
+
+    <!-- 2. Function invocation using call() and apply() -->
+    <section>
+        <h2>Function Invocation with call() and apply()</h2>
+        <button onclick="demoCallApply()">Demo Call and Apply</button>
+        <script>
+            function showInfo(city, country) {
+                alert(`Name: ${this.name}, City: ${city}, Country: ${country}`);
+            }
+
+            const person = { name: 'POTHIYAN RAMAR' };
+
+            function demoCallApply() {
+                // Using call() to invoke function
+                showInfo.call(person, 'TAMILNADU', 'INDIA');
+
+                // Using apply() to invoke function
+                showInfo.apply(person, ['PARIS', 'FRANCE']);
+            }
+        </script>
+    </section>
+
+    <!-- 3. Simple Counter -->
+    <section class="counter-container">
+        <h2>Simple Counter</h2>
+        <span id="counterValue">0</span>
+        <button onclick="incrementCounter()">Count</button>
+        <script>
+            let counter = 0;
+            
+            function incrementCounter() {
+                counter++;
+                document.getElementById('counterValue').textContent = counter;
+            }
+        </script>
+    </section>
+
+    <!-- 4. Counter using Getter and Setter -->
+    <section class="counter-container">
+        <h2>Counter with Getter and Setter</h2>
+        <span id="getterSetterCounter">0</span>
+        <button onclick="counterInstance.increment()">Count</button>
+        <script>
+            class Counter {
+                constructor() {
+                    this._count = 0;
+                }
+                
+                get count() {
+                    return this._count;
+                }
+                
+                set count(value) {
+                    this._count = value;
+                }
+                
+                increment() {
+                    this.count += 1;
+                    document.getElementById('getterSetterCounter').textContent = this.count;
+                }
+            }
+            
+            const counterInstance = new Counter();
+        </script>
+    </section>
+
+    <!-- 5. Adding properties to a function using prototypes -->
+    <section>
+        <h2>Function Prototype Properties</h2>
+        <button onclick="showProperties()">Show Prototype Properties</button>
+        <script>
+            function Person(name) {
+                this.name = name;
+            }
+            
+            // Adding properties using prototype
+            Person.prototype.sayHello = function() {
+                return `Hello, my name is ${this.name}.`;
+            };
+            
+            Person.prototype.age = 30;
+
+            function showProperties() {
+                const person = new Person('POTHIYAN RAMAR');
+                alert(person.sayHello()); // Use prototype method
+                alert(`Age: ${person.age}`); // Access prototype property
+            }
+        </script>
+    </section>
+
+</body>
+</html>

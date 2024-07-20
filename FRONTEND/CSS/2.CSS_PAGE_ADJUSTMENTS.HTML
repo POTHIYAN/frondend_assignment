@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS and HTML Examples</title>
+    <style>
+        /* 1. Black border for table with hover effect */
+        table {
+            border: 2px solid black; /* Black border for the table */
+            border-collapse: collapse; /* Collapse borders into a single border */
+            width: 100%; /* Full width for the table */
+            margin: 20px 0; /* Margin around the table */
+        }
+        table th, table td {
+            border: 1px solid black; /* Border for table cells */
+            padding: 10px; /* Padding inside table cells */
+            text-align: left; /* Align text to the left */
+        }
+        table:hover {
+            background-color: lightgray; /* Change background color on hover */
+        }
+
+        /* 2. Visibility and display examples */
+        .visibility-example, .display-example {
+            margin: 20px 0; /* Margin around the sections */
+        }
+        .hidden {
+            visibility: hidden; /* Hide the element, but it still takes up space */
+        }
+        .visible {
+            visibility: visible; /* Make the element visible */
+        }
+        .collapse {
+            visibility: collapse; /* Collapse the element (only works for table rows and columns) */
+        }
+        .none {
+            display: none; /* Do not display the element and do not take up space */
+        }
+        .inline {
+            display: inline; /* Display the element inline with other elements */
+        }
+        .block {
+            display: block; /* Display the element as a block (takes up full width) */
+        }
+        .contents {
+            display: contents; /* Display the children of the element as if they were direct children of the parent */
+        }
+        .list-item {
+            display: list-item; /* Display the element as a list item */
+        }
+
+        /* 3. Smooth scrolling */
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling behavior */
+        }
+        .scroll-link {
+            display: block; /* Display links as block elements */
+            margin: 20px 0; /* Margin around the links */
+        }
+
+        /* 4. Padding and margin examples */
+        .padding-margin-example {
+            padding: 20px; /* Padding inside the element */
+            margin: 30px; /* Margin outside the element */
+            border: 1px solid black; /* Border around the element */
+        }
+
+        .padding-example {
+            padding: 20px; /* Padding inside the element */
+            border: 1px solid black; /* Border around the element */
+        }
+
+        .margin-example {
+            margin: 30px; /* Margin outside the element */
+            border: 1px solid black; /* Border around the element */
+        }
+
+        /* 5. Multiple background images with black text */
+        .multiple-backgrounds {
+            background-image: url('TIGER.jpeg'), url('IMG.jpeg');
+            background-size: cover, contain; /* First image covers the element, second image contains within the element */
+            background-position: center, top right; /* Positioning of the images */
+            background-repeat: no-repeat, no-repeat; /* No repeat for both images */
+            height: 1000px; /* Set a fixed height */
+            width: 100%; /* Full width for the element */
+            border: 1px solid black; /* Border around the element */
+            margin: 20px 0; /* Margin around the element */
+            color: white; /* White text color */
+            display: flex; /* Use flex to center content */
+            align-items: center; /* Vertically center content */
+            justify-content: center; /* Horizontally center content */
+            text-align: center; /* Center text alignment */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Table with black border and hover effect -->
+    <section>
+        <h2>Table with Black Border and Hover Effect</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1, Cell 1</td>
+                    <td>Row 1, Cell 2</td>
+                </tr>
+                <tr>
+                    <td>Row 2, Cell 1</td>
+                    <td>Row 2, Cell 2</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 2. Visibility and Display Examples -->
+    <section class="visibility-example">
+        <h2>Visibility Examples</h2>
+        <div class="visible">This is visible</div>
+        <div class="hidden">This is hidden but takes up space</div>
+        <div class="collapse">This collapses (visible only in table context)</div>
+    </section>
+
+    <section class="display-example">
+        <h2>Display Examples</h2>
+        <div class="none">This element is not displayed</div>
+        <div class="inline">This element is inline</div>
+        <div class="block">This element is block</div>
+        <div class="contents">Contents of this element are displayed as if they were directly inside the parent</div>
+        <div class="list-item">This element is displayed as a list item</div>
+    </section>
+
+    <!-- 3. Smooth Scrolling Links -->
+    <section>
+        <h2>Smooth Scrolling</h2>
+        <a href="#bottom" class="scroll-link">Click to go to the bottom of the page</a>
+        <a href="#top" class="scroll-link">Click to go to the top of the page</a>
+        <div style="height: 1200px;"> <!-- Simulate a long page -->
+            <div id="bottom"></div>
+        </div>
+        <div id="top"></div>
+    </section>
+
+    <!-- 4. Padding and Margin Examples -->
+    <section>
+        <h2>Padding and Margin Examples</h2>
+        <div class="padding-margin-example">Padding and Margin Example</div>
+        <div class="padding-example">Padding Example</div>
+        <div class="margin-example">Margin Example</div>
+    </section>
+
+    <!-- 5. Multiple Background Images -->
+    <section>
+        <h2>Multiple Background Images</h2>
+        <div class="multiple-backgrounds">
+            This element has multiple background images.
+        </div>
+    </section>
+
+</body>
+</html>

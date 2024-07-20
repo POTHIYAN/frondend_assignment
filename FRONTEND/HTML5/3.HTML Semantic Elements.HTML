@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive HTML Examples</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            padding: 20px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        article {
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        figure {
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        figcaption {
+            font-style: italic;
+        }
+        mark {
+            background-color: yellow;
+        }
+        nav {
+            background-color: lightgray;
+            padding: 10px;
+        }
+        time {
+            font-style: italic;
+        }
+        hgroup {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Non-Semantic Elements -->
+    <div class="container">
+        <div>
+            <h2>Non-Semantic Elements Example</h2>
+            <p>This is a paragraph inside a <span class="highlight">non-semantic</span> element.</p>
+            <p>Another <span>example</span> of a <div>non-semantic</div> container.</p>
+        </div>
+    </div>
+
+    <!-- 2. Semantic Elements -->
+    <form>
+        <fieldset>
+            <legend>Contact Form</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <article>
+        <h2>Article Heading</h2>
+        <p>This is a paragraph inside an article.</p>
+    </article>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+            </tr>
+            <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 3. Various HTML5 Tags -->
+    <header>
+        <h1>Website Header</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hgroup>
+        <h2>Main Heading</h2>
+        <h3>Subheading</h3>
+    </hgroup>
+
+    <section>
+        <h2>Section Title</h2>
+        <p>This section contains some text.</p>
+        <article>
+            <h3>Article Title</h3>
+            <p>Content of the article.</p>
+            <time datetime="2024-07-20">July 20, 2024</time>
+        </article>
+        <aside>
+            <h4>Related Information</h4>
+            <p>This is some related information.</p>
+        </aside>
+    </section>
+
+    <figure>
+        <img src="HCJ.jpeg" alt="Example Image">
+        <figcaption>This is a caption for the image.</figcaption>
+    </figure>
+
+    <footer>
+        <p>&copy; 2024 VRP TECH SOLUTIONS</p>
+    </footer>
+
+    <!-- JavaScript Examples -->
+
+    <script>
+        // 1. Hide Element Using 'this' Keyword
+        function hideElement() {
+            const element = document.getElementById('hideMe');
+            element.style.display = 'none'; // Hide the element
+        }
+
+        // 2. Function Invocation with call() and apply()
+        function showInfo(city, country) {
+            alert(`Name: ${this.name}, City: ${city}, Country: ${country}`);
+        }
+
+        const person = { name: 'POTHIYAN RAMAR' };
+
+        function demoCallApply() {
+            // Using call() to invoke function
+            showInfo.call(person, 'TAMILNADU', 'INDIA');
+            // Using apply() to invoke function
+            showInfo.apply(person, ['PARIS', 'FRANCE']);
+        }
+
+        // 3. Simple Counter
+        let counter = 0;
+        function incrementCounter() {
+            counter++;
+            document.getElementById('counterValue').textContent = counter;
+        }
+
+        // 4. Counter with Getter and Setter
+        class Counter {
+            constructor() {
+                this._count = 0;
+            }
+            
+            get count() {
+                return this._count;
+            }
+            
+            set count(value) {
+                this._count = value;
+            }
+            
+            increment() {
+                this.count += 1;
+                document.getElementById('getterSetterCounter').textContent = this.count;
+            }
+        }
+        
+        const counterInstance = new Counter();
+
+        // 5. Adding properties to a function using prototypes
+        function Person(name) {
+            this.name = name;
+        }
+        
+        // Adding properties using prototype
+        Person.prototype.sayHello = function() {
+            return `Hello, my name is ${this.name}.`;
+        };
+        
+        Person.prototype.age = 30;
+
+        function showProperties() {
+            const person = new Person('POTHIYAN RAMAR');
+            alert(person.sayHello()); // Use prototype method
+            alert(`Age: ${person.age}`); // Access prototype property
+        }
+    </script>
+
+    <!-- Additional HTML for Counter examples -->
+    <section class="counter-container">
+        <h2>Simple Counter</h2>
+        <span id="counterValue">0</span>
+        <button onclick="incrementCounter()">Count</button>
+    </section>
+
+    <section class="counter-container">
+        <h2>Counter with Getter and Setter</h2>
+        <span id="getterSetterCounter">0</span>
+        <button onclick="counterInstance.increment()">Count</button>
+    </section>
+
+    <!-- Buttons to demonstrate JavaScript functionality -->
+    <section>
+        <h2>JavaScript Functionality</h2>
+        <button onclick="hideElement()">Hide Element Using 'this'</button>
+        <button onclick="demoCallApply()">Demo Call and Apply</button>
+        <button onclick="showProperties()">Show Prototype Properties</button>
+    </section>
+
+</body>
+</html>

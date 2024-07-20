@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined HTML Example</title>
+    <style>
+        /* General body styling */
+        body {
+            background-color: lightblue; /* Background color for the entire page */
+            background-image: url('path/to/image.jpg'); /* Background image */
+            background-attachment: fixed; /* Image doesn't scroll with the page */
+            background-size: cover; /* Cover the entire page */
+            font-family: Arial, sans-serif; /* Default font */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center; /* Center align heading */
+        }
+
+        /* Section for border styles */
+        .border-example {
+            border-top: 5px solid red; /* Top border */
+            border-right: 10px dotted blue; /* Right border */
+            border-bottom: 15px dashed green; /* Bottom border */
+            border-left: 20px double purple; /* Left border */
+            padding: 20px; /* Padding to see the border clearly */
+            margin: 20px; /* Margin for spacing */
+            text-align: center; /* Center align text */
+        }
+
+        /* Dimensions example */
+        .pixel-dimensions {
+            height: 200px; /* Height in pixels */
+            width: 300px; /* Width in pixels */
+            background-color: lightcoral; /* Background color */
+            margin: 20px; /* Margin for spacing */
+        }
+
+        .percentage-dimensions {
+            height: 50%; /* Height in percentage */
+            width: 50%; /* Width in percentage */
+            background-color: lightgreen; /* Background color */
+            margin: 20px; /* Margin for spacing */
+        }
+
+        /* Font styles */
+        .font-style-1 {
+            font-family: 'Arial', sans-serif; /* Font family */
+            font-size: 20px; /* Font size */
+            color: navy; /* Font color */
+            text-align: left; /* Text alignment */
+            margin: 10px; /* Margin for spacing */
+        }
+
+        .font-style-2 {
+            font-family: 'Courier New', monospace; /* Font family */
+            font-size: 25px; /* Font size */
+            color: darkgreen; /* Font color */
+            text-align: center; /* Text alignment */
+            margin: 10px; /* Margin for spacing */
+        }
+
+        .font-style-3 {
+            font-family: 'Times New Roman', serif; /* Font family */
+            font-size: 30px; /* Font size */
+            color: darkred; /* Font color */
+            text-align: right; /* Text alignment */
+            margin: 10px; /* Margin for spacing */
+        }
+
+        /* CSS for pseudo classes and elements */
+        .highlight {
+            background-color: yellow; /* Highlight background color */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        p::first-line {
+            font-weight: bold; /* Bold the first line of paragraphs */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Heading -->
+    <h1>Combined HTML and CSS Example</h1>
+
+    <!-- Section for basic HTML tags -->
+    <section>
+        <h2>Basic HTML Tags</h2>
+        <p>This is a basic HTML page demonstrating various tags:</p>
+        <p>This text is <i>italicized</i>.</p>
+        <p>This text is <b>bold</b>.</p>
+        <p>Visit <a href="https://www.example.com">Example</a> for more information.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <p>Here is a list item: <span class="highlight">Item</span>.</p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <blockquote>
+            This is a blockquote. Lorem ipsum dolor sit amet.
+        </blockquote>
+        <hr>
+        <img src="IMG1.jpeg" alt="Description of image">
+        <div>
+            <p>This is inside a division.</p>
+        </div>
+        <p>This <span class="highlight">span</span> is highlighted.</p>
+        <p><a href="#section2">Go to Section 2</a></p>
+        <h2 id="section2">Section 2</h2>
+        <p>This is section 2.</p>
+    </section>
+
+    <!-- Section for border styles -->
+    <section>
+        <h2>Different Border Styles</h2>
+        <div class="border-example">
+            This div has different borders on each side.
+        </div>
+    </section>
+
+    <!-- Section for dimensions -->
+    <section>
+        <h2>Dimensions Example</h2>
+        <div class="pixel-dimensions">
+            This div has pixel dimensions (200px height and 300px width).
+        </div>
+        <div class="percentage-dimensions">
+            This div has percentage dimensions (50% height and 50% width).
+        </div>
+    </section>
+
+    <!-- Section for font styles -->
+    <section>
+        <h2>Font Styles Example</h2>
+        <p class="font-style-1">This paragraph uses Arial font, size 20px, navy color, and is left-aligned.</p>
+        <p class="font-style-2">This paragraph uses Courier New font, size 25px, dark green color, and is center-aligned.</p>
+        <p class="font-style-3">This paragraph uses Times New Roman font, size 30px, dark red color, and is right-aligned.</p>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+    <style>
+        /* Style for the button */
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section for comments and array -->
+    <section>
+        <h2>Single and Multiline Comments</h2>
+        <script>
+            // Single-line comment: This is a single line comment
+
+            /*
+            Multiline comment:
+            This is a multiline comment.
+            It can span multiple lines.
+            */
+            
+            console.log("Comments example loaded.");
+        </script>
+    </section>
+
+    <!-- Section for sorting array -->
+    <section>
+        <h2>Sort Fruits in Descending Order</h2>
+        <button onclick="sortFruits()">Sort Fruits</button>
+        <p id="fruits-list">Apple, Orange, Banana, Mango, Pineapple</p>
+        <script>
+            // Array of fruit names
+            var fruits = ["Apple", "Orange", "Banana", "Mango", "Pineapple"];
+
+            function sortFruits() {
+                fruits.sort(function(a, b) {
+                    return b.localeCompare(a); // Sort in descending order
+                });
+                document.getElementById("fruits-list").innerText = fruits.join(', ');
+            }
+        </script>
+    </section>
+
+    <!-- Section for FOR/IN loop -->
+    <section>
+        <h2>FOR/IN Loop Example</h2>
+        <script>
+            var person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 30
+            };
+
+            console.log("Using FOR/IN loop:");
+            for (var key in person) {
+                console.log(key + ": " + person[key]); // Log each property
+            }
+        </script>
+    </section>
+
+    <!-- Section for object properties -->
+    <section>
+        <h2>Object Properties Access</h2>
+        <p id="property-access"></p>
+        <script>
+            // Create an object "person" with properties
+            var person = {
+                firstName: "Jane",
+                lastName: "Smith"
+            };
+
+            // Access properties in two different ways
+            document.getElementById("property-access").innerHTML = 
+                "First way: " + person.firstName + " " + person.lastName + "<br>" +
+                "Second way: " + person["firstName"] + " " + person["lastName"];
+        </script>
+    </section>
+
+    <!-- Section for variable hoisting -->
+    <section>
+        <h2>Variable Hoisting Example</h2>
+        <script>
+            // Variable hoisting: declaration is moved to the top
+            console.log("Value of x before initialization: " + x); // undefined
+            var x = 10;
+            console.log("Value of x after initialization: " + x); // 10
+        </script>
+    </section>
+
+    <!-- Section for strict mode -->
+    <section>
+        <h2>Strict Mode Example</h2>
+        <script>
+            'use strict'; // Enable strict mode
+
+            try {
+                // Attempt to use an undeclared variable
+                undeclaredVar = 5; // This will cause an error in strict mode
+            } catch (error) {
+                console.log("Error: " + error.message);
+            }
+        </script>
+    </section>
+
+</body>
+</html>

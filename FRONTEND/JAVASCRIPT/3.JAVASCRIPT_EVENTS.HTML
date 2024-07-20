@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            margin-right: 10px;
+        }
+
+        .form-group input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Display Current Date and Time -->
+    <div class="container">
+        <h2>Display Date and Time</h2>
+        <button id="dateTimeButton">Show Current Date and Time</button>
+        <p id="dateTimeDisplay"></p>
+    </div>
+
+    <!-- 2. Form Validation -->
+    <div class="container">
+        <h2>Form Validation</h2>
+        <form id="myForm">
+            <div class="form-group">
+                <label for="textInput">Text Input:</label>
+                <input type="text" id="textInput" name="textInput">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="validationMessage" style="color: red;"></p>
+    </div>
+
+    <!-- 3. Console Logging for Debugging -->
+    <div class="container">
+        <h2>Debugging with console.log()</h2>
+        <button id="debugButton">Run Debug</button>
+    </div>
+
+    <!-- 4. Cookies -->
+    <div class="container">
+        <h2>Cookies</h2>
+        <button id="setCookieButton">Set Cookie</button>
+        <button id="getCookieButton">Get Cookie</button>
+        <button id="checkCookieButton">Check Cookie</button>
+        <p id="cookieMessage"></p>
+    </div>
+
+    <!-- 5. JSON Object -->
+    <div class="container">
+        <h2>JSON Object</h2>
+        <p id="jsonDisplay"></p>
+    </div>
+
+    <script>
+        // 1. Display Current Date and Time
+        document.getElementById('dateTimeButton').addEventListener('click', function() {
+            const now = new Date();
+            document.getElementById('dateTimeDisplay').textContent = now.toString();
+        });
+
+        // 2. Form Validation
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            const textInput = document.getElementById('textInput').value;
+            const validationMessage = document.getElementById('validationMessage');
+            if (textInput.trim() === '') {
+                event.preventDefault(); // Prevent form submission
+                validationMessage.textContent = 'Text input cannot be empty.';
+            } else {
+                validationMessage.textContent = '';
+            }
+        });
+
+        // 3. Console Logging for Debugging
+        document.getElementById('debugButton').addEventListener('click', function() {
+            console.log('Debugging information:');
+            const debugData = {
+                name: 'Sample Data',
+                value: 12345
+            };
+            console.log('Debug Data:', debugData);
+        });
+
+        // 4. Cookies
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            console.log('Cookie set:', name, value);
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function checkCookie(name) {
+            const cookie = getCookie(name);
+            return cookie !== null;
+        }
+
+        document.getElementById('setCookieButton').addEventListener('click', function() {
+            setCookie('testCookie', 'cookieValue', 7);
+            document.getElementById('cookieMessage').textContent = 'Cookie has been set.';
+        });
+
+        document.getElementById('getCookieButton').addEventListener('click', function() {
+            const cookieValue = getCookie('testCookie');
+            document.getElementById('cookieMessage').textContent = 'Cookie value: ' + (cookieValue || 'Not found');
+        });
+
+        document.getElementById('checkCookieButton').addEventListener('click', function() {
+            const cookieExists = checkCookie('testCookie');
+            document.getElementById('cookieMessage').textContent = cookieExists ? 'Cookie exists.' : 'Cookie does not exist.';
+        });
+
+        // 5. JSON Object
+        const jsonObject = {
+            name: 'POTHIYAN RAMAR',
+            age: 30,
+            email: 'pothiyan035@gmail.com'
+        };
+        document.getElementById('jsonDisplay').textContent = `Name: ${jsonObject.name}, Age: ${jsonObject.age}, Email: ${jsonObject.email}`;
+    </script>
+
+</body>
+</html>
